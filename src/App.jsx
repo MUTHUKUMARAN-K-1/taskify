@@ -6,25 +6,24 @@ import TodoContainer from "./components/TodoContainer";
 function App() {
   const [inputVal, setInputVal] = useState("");
   const [todos, setTodos] = useState([]);
+
   function writeTodo(e) {
     setInputVal(e.target.value);
   }
   function addTodo() {
-    if (inputVal !== "") {
+    if (inputVal.trim() !== "") {
       setTodos((prevTodos) => [
         ...prevTodos,
-        { id: Date.now(), text: inputVal }, // <-- Store as object
+        { id: Date.now(), text: inputVal },
       ]);
       setInputVal("");
     }
   }
 
-  function deleteTodo(todoIndex) {
-    setTodos((prevTodos) =>
-      prevTodos.filter((_, index) => index !== todoIndex)
-    );
+  function deleteTodo(todoId) {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== todoId));
   }
-  console.log(todos);
+
   return (
     <main>
       <h1>To Do list</h1>
