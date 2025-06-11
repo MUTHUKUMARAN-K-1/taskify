@@ -1,6 +1,6 @@
 import Todo from "./Todo";
 
-function ToDoContainer({ todos = [], delTodo }) {
+function TodoContainer({ todos = [], delTodo }) {
   return (
     <div className="container">
       {todos.map((todo, index) => {
@@ -16,4 +16,4 @@ function ToDoContainer({ todos = [], delTodo }) {
   );
 }
 
-export default ToDoContainer;
+export default TodoContainer;
