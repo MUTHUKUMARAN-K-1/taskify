@@ -10,8 +10,9 @@ function App() {
   function writeTodo(e) {
     setInputVal(e.target.value);
   }
+
   function addTodo() {
-    if (inputVal.trim() !== "") {
+    if (inputVal !== "") {
       setTodos((prevTodos) => [
         ...prevTodos,
         { id: Date.now(), text: inputVal },
@@ -21,7 +22,9 @@ function App() {
   }
 
   function deleteTodo(todoId) {
-    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== todoId));
+    setTodos((prevTodos) =>
+      prevTodos.filter((todo) => todo.id !== todoId)
+    );
   }
 
   return (
