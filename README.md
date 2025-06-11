@@ -1,7 +1,7 @@
 
 # ✅ Taskify – Simple & Stylish To-Do List App
 
-**Taskify** is a minimalist and responsive to-do list application built using **React.js** and **Tailwind CSS**. It helps you stay productive with a clean UI, intuitive features, and a fast user experience.
+**Taskify** is a minimalist and responsive to-do list application built using **React.js** and **CSS**. It helps you stay productive with a clean UI, intuitive features, and a fast user experience.
 
 ---
 
