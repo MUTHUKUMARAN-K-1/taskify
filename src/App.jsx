@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import InputContainer from "./components/InputContainer";
-import ToDoContainer from "./components/ToDoContainer";
+import TodoContainer from "./components/TodoContainer";
 
 function App() {
   const [inputVal, setInputVal] = useState("");
@@ -10,7 +10,7 @@ function App() {
     setInputVal(e.target.value);
   }
   function addTodo() {
-    if (inputVal != "") {
+    if (inputVal !== "") {
       setTodos((prevTodos) => [
         ...prevTodos,
         { id: Date.now(), text: inputVal }, // <-- Store as object
@@ -21,9 +21,7 @@ function App() {
 
   function deleteTodo(todoIndex) {
     setTodos((prevTodos) =>
-      prevTodos.filter((_, index) => {
-        return index !== todoIndex;
-      })
+      prevTodos.filter((_, index) => index !== todoIndex)
     );
   }
   console.log(todos);
@@ -35,7 +33,7 @@ function App() {
         writeTodo={writeTodo}
         addTodo={addTodo}
       />
-      <ToDoContainer todos={todos} delTodo={deleteTodo} /> {/* Fix usage */}
+      <TodoContainer todos={todos} delTodo={deleteTodo} />
     </main>
   );
 }
